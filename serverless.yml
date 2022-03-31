@@ -33,6 +33,13 @@ functions:
           path: todos
           method: post
           cors: true
+  list:
+    handler: handler/listTodo.listTodo
+    events:
+      - http:
+          path: todos
+          method: get
+          cors: true
 
 resources:
   Resources:
