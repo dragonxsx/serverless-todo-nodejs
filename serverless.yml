@@ -40,6 +40,13 @@ functions:
           path: todos
           method: get
           cors: true
+  get:
+    handler: handler/getTodo.getTodo
+    events:
+      - http:
+          path: todos/{id}
+          method: get
+          cors: true
 
 resources:
   Resources:
