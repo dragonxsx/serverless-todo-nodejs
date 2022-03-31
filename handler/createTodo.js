@@ -4,8 +4,9 @@ const uuid = require("uuid");
 const TODO_TABLE = process.env.TODO_TABLE;
 const dynamoDbClient = new AWS.DynamoDB.DocumentClient();
 
-exports.createTodo = async (event, context) => {
+module.exports.createTodo = async (event, context) => {
     const timestamp = new Date().getTime();
+    
     const reqBody = JSON.parse(event.body);
     if (typeof reqBody.todo !== "string") {
         throw new Error("Validation failed");

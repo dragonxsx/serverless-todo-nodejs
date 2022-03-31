@@ -54,6 +54,13 @@ functions:
           path: todos/{id}
           method: delete
           cors: true
+  update:
+    handler: handler/updateTodo.updateTodo
+    events:
+      - http:
+          path: todos/{id}
+          method: put
+          cors: true
 
 resources:
   Resources:
